@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,6 +37,7 @@
             background: var(--bg);
             color: var(--text);
             overflow-x: hidden;
+            cursor: none;
         }
 
         /* Custom cursor */
@@ -50,10 +50,9 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            z-index: 2147483647;
+            z-index: 9999;
             transition: transform 0.15s ease;
-            mix-blend-mode: normal;
-            opacity: 0.8;
+            mix-blend-mode: difference;
         }
 
         .cursor-ring {
@@ -65,9 +64,9 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            z-index: 2147483647;
+            z-index: 9998;
             transition: transform 0.35s ease, opacity 0.3s;
-            opacity: 0.4;
+            opacity: 0.5;
         }
 
         /* ── NAV ── */
@@ -302,7 +301,7 @@
             letter-spacing: 0.01em;
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: none;
-            cursor: default;
+            cursor: none;
         }
 
         .btn-primary:hover {
@@ -331,7 +330,7 @@
             text-decoration: none;
             border: 1.5px solid var(--border);
             transition: all 0.3s;
-            cursor: default;
+            cursor: none;
         }
 
         .btn-ghost:hover {
@@ -345,6 +344,8 @@
             margin-top: 56px;
             animation: fadeUp 0.8s 0.4s ease both;
         }
+
+        .stat-item {}
 
         .stat-num {
             font-family: 'Playfair Display', serif;
@@ -541,7 +542,7 @@
             position: relative;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            cursor: default;
+            cursor: none;
         }
 
         .feat-card::before {
@@ -686,7 +687,7 @@
             border-radius: 24px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            cursor: default;
+            cursor: none;
         }
 
         .course-card:hover {
@@ -782,7 +783,7 @@
             text-decoration: none;
             margin-top: 20px;
             transition: all 0.3s;
-            cursor: default;
+            cursor: none;
             border: none;
         }
 
@@ -981,11 +982,12 @@
     <nav>
         <div class="nav-logo">Drive<span>Ease</span></div>
         <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#courses">Courses</a>
-            <a href="admin_login.jsp">Admin Login</a>
-            <a href="student_login.jsp">Student Login</a>
-            <a href="StudentServlet?action=new" class="nav-cta">Register Now</a>
+            <a href="#">Features</a>
+            <a href="#">Courses</a>
+            <a href="#">Instructors</a>
+            <a href="#">Admin Login</a>
+            <a href="#">Student Login</a>
+            <a href="#" class="nav-cta">Register Now</a>
         </div>
     </nav>
 
@@ -995,7 +997,7 @@
         <div class="blob blob-2"></div>
 
         <div class="hero-content">
-            <div class="hero-badge">Now enrolling — 2026</div>
+            <div class="hero-badge">Now enrolling — Spring 2026</div>
             <h1 class="hero-title">
                 Learn to Drive<br>with <em>Confidence</em>
             </h1>
@@ -1004,14 +1006,14 @@
                 and earn your license — all in one place.
             </p>
             <div class="hero-actions">
-                <a href="StudentServlet?action=new" class="btn-primary">
+                <a href="#" class="btn-primary">
                     Become a Student
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
                 </a>
-                <a href="student_login.jsp" class="btn-ghost">Student Portal</a>
+                <a href="#" class="btn-ghost">Student Portal</a>
             </div>
             <div class="hero-stats">
                 <div class="stat-item">
@@ -1056,7 +1058,7 @@
     </section>
 
     <!-- FEATURES -->
-    <section class="features" id="features">
+    <section class="features">
         <span class="section-label reveal">Why DriveEase</span>
         <h2 class="section-title reveal">Everything you need to <em>get licensed</em></h2>
         <div class="features-grid">
@@ -1116,7 +1118,7 @@
     </section>
 
     <!-- COURSES -->
-    <section class="courses" id="courses">
+    <section class="courses">
         <span class="section-label reveal">Pricing</span>
         <h2 class="section-title reveal">Courses built for <em>every learner</em></h2>
         <div class="courses-grid">
@@ -1131,7 +1133,7 @@
                     <div class="course-feature">1 assigned instructor</div>
                     <div class="course-feature">Progress tracking dashboard</div>
                     <div class="course-feature">Theory test prep materials</div>
-                    <a href="StudentServlet?action=new" class="course-btn course-btn-ghost">Get Started</a>
+                    <a href="#" class="course-btn course-btn-ghost">Get Started</a>
                 </div>
             </div>
             <div class="course-card reveal">
@@ -1146,7 +1148,7 @@
                     <div class="course-feature">Mock test sessions included</div>
                     <div class="course-feature">Priority booking access</div>
                     <div class="course-feature">Post-lesson video feedback</div>
-                    <a href="StudentServlet?action=new" class="course-btn course-btn-primary">Get Started</a>
+                    <a href="#" class="course-btn course-btn-primary">Get Started</a>
                 </div>
             </div>
             <div class="course-card reveal">
@@ -1161,7 +1163,7 @@
                     <div class="course-feature">Full test preparation program</div>
                     <div class="course-feature">Highway & night driving</div>
                     <div class="course-feature">Pass guarantee or refund</div>
-                    <a href="StudentServlet?action=new" class="course-btn course-btn-ghost">Get Started</a>
+                    <a href="#" class="course-btn course-btn-ghost">Get Started</a>
                 </div>
             </div>
         </div>
@@ -1216,14 +1218,14 @@
         <h2 class="reveal">Ready to hit<br>the road?</h2>
         <p class="reveal">Join over 2,400 students who've earned their license with DriveEase.</p>
         <div class="cta-btns reveal">
-            <a href="StudentServlet?action=new" class="btn-primary">
+            <a href="#" class="btn-primary">
                 Register Today
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
             </a>
-            <a href="admin_login.jsp" class="btn-ghost">Admin Portal</a>
+            <a href="#" class="btn-ghost">Talk to an Advisor</a>
         </div>
     </section>
 
@@ -1243,53 +1245,15 @@
         // Custom cursor
         const cursor = document.getElementById('cursor');
         const ring = document.getElementById('cursorRing');
-        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-        let rx = mx, ry = my;
-        let initialized = false;
-
+        let mx = 0, my = 0, rx = 0, ry = 0;
         document.addEventListener('mousemove', e => {
             mx = e.clientX; my = e.clientY;
-            if(!initialized) {
-                cursor.style.opacity = "1";
-                ring.style.opacity = "0.5";
-                initialized = true;
-            }
             cursor.style.transform = `translate(${mx - 6}px, ${my - 6}px)`;
         });
-
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = "0";
-            ring.style.opacity = "0";
-        });
-
-        document.addEventListener('mouseenter', () => {
-            if(initialized) {
-                cursor.style.opacity = "1";
-                ring.style.opacity = "0.5";
-            }
-        });
-
-        // Add hover effects for buttons and links
-        let currentScale = 1;
-        let targetScale = 1;
-
-        document.querySelectorAll('a, button, .feat-card, .course-card, input, select, textarea').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                targetScale = 1.5;
-                ring.style.background = "rgba(232, 197, 71, 0.1)";
-            });
-            el.addEventListener('mouseleave', () => {
-                targetScale = 1;
-                ring.style.background = "transparent";
-            });
-        });
-
         function animRing() {
             rx += (mx - rx) * 0.12;
             ry += (my - ry) * 0.12;
-            currentScale += (targetScale - currentScale) * 0.15;
-            
-            ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px) scale(${currentScale})`;
+            ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
             requestAnimationFrame(animRing);
         }
         animRing();
