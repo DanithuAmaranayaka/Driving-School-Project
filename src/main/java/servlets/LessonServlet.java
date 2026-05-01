@@ -152,6 +152,7 @@ public class LessonServlet extends HttpServlet {
 
         Lesson lesson = new Lesson(id, studentId, instructorId, vehicleId, lessonDate, lessonTime, status);
         lessonDAO.updateLesson(lesson);
+        LogUtil.logAction("Lesson Updated (ID: " + id + ")");
         response.sendRedirect("LessonServlet?action=list");
     }
 
@@ -159,6 +160,7 @@ public class LessonServlet extends HttpServlet {
             throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         lessonDAO.deleteLesson(id);
+        LogUtil.logAction("Lesson Cancelled (ID: " + id + ")");
         response.sendRedirect("LessonServlet?action=list");
     }
 }
