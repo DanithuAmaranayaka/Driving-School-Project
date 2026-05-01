@@ -1257,18 +1257,6 @@
             cursor.style.transform = `translate(${mx - 6}px, ${my - 6}px)`;
         });
 
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = "0";
-            ring.style.opacity = "0";
-        });
-
-        document.addEventListener('mouseenter', () => {
-            if(initialized) {
-                cursor.style.opacity = "1";
-                ring.style.opacity = "0.5";
-            }
-        });
-
         // Add hover effects for buttons and links
         let currentScale = 1;
         let targetScale = 1;

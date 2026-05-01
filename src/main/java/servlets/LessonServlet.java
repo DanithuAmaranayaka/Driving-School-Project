@@ -20,6 +20,8 @@ import dao.InstructorDAO;
 import dao.VehicleDAO;
 
 import models.Lesson;
+import util.LogUtil;
+
 
 @WebServlet("/LessonServlet")
 public class LessonServlet extends HttpServlet {
@@ -122,6 +124,8 @@ public class LessonServlet extends HttpServlet {
         
         Lesson newLesson = new Lesson(0, studentId, instructorId, vehicleId, lessonDate, lessonTime, status);
         lessonDAO.insertLesson(newLesson);
+        LogUtil.logAction("Lesson Booked for Student ID: " + studentId);
+
         
         HttpSession session = request.getSession(false);
         if (session != null && session.getAttribute("loggedStudent") != null) {

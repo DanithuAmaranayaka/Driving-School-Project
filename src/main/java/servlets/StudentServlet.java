@@ -20,6 +20,8 @@ import models.Student;
 import models.Lesson;
 import models.Payment;
 import models.Test;
+import util.LogUtil;
+
 
 @WebServlet("/StudentServlet")
 public class StudentServlet extends HttpServlet {
@@ -169,14 +171,11 @@ public class StudentServlet extends HttpServlet {
         
         Student newStudent = new Student(0, name, nic, phoneNumber, address, licenseType, username, password);
         studentDAO.insertStudent(newStudent);
+        LogUtil.logAction("Student Registered: " + name);
+
         
-        // If logged in as admin, redirect to list. If registration, redirect to login.
-        HttpSession session = request.getSession(false);
-        if (session != null && session.getAttribute("adminUser") != null) {
-            response.sendRedirect("StudentServlet?action=list");
-        } else {
-            response.sendRedirect("student_login.jsp?registered=true");
-        }
+        // Always redirect to login page after registration
+        response.sendRedirect("student_login.jsp?registered=true");
     }
 
     private void updateStudent(HttpServletRequest request, HttpServletResponse response)
