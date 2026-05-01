@@ -17,6 +17,8 @@ import dao.PaymentDAO;
 import dao.StudentDAO;
 
 import models.Payment;
+import util.LogUtil;
+
 
 @WebServlet("/PaymentServlet")
 public class PaymentServlet extends HttpServlet {
@@ -109,6 +111,8 @@ public class PaymentServlet extends HttpServlet {
         
         Payment newPayment = new Payment(0, studentId, courseType, amount, paymentDate, paymentMethod);
         paymentDAO.insertPayment(newPayment);
+        LogUtil.logAction("Payment Recorded: Amount " + amount + " for Student ID: " + studentId);
+
         response.sendRedirect("PaymentServlet?action=list");
     }
 

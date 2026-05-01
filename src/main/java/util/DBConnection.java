@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBConnection {
     // Update these configuration variables based on your DB setup
-    private static final String URL = "jdbc:mysql://localhost:3306/driving_schoolDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+    private static final String URL = "jdbc:mysql://localhost:3307/driving_schooldb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
 

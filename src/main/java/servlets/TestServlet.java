@@ -17,6 +17,8 @@ import dao.TestDAO;
 import dao.StudentDAO;
 
 import models.Test;
+import util.LogUtil;
+
 
 @WebServlet("/TestServlet")
 public class TestServlet extends HttpServlet {
@@ -107,6 +109,8 @@ public class TestServlet extends HttpServlet {
         
         Test newTest = new Test(0, studentId, testDate, result);
         testDAO.insertTest(newTest);
+        LogUtil.logAction("Test Booking: Date " + testDate + " for Student ID: " + studentId);
+
         
         HttpSession session = request.getSession(false);
         if (session != null && session.getAttribute("loggedStudent") != null) {
