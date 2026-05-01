@@ -193,6 +193,7 @@ public class StudentServlet extends HttpServlet {
         
         Student student = new Student(id, name, nic, phoneNumber, address, licenseType, existStu.getUsername(), existStu.getPassword());
         studentDAO.updateStudent(student);
+        LogUtil.logAction("Student Updated: " + name + " (ID: " + id + ")");
         response.sendRedirect("StudentServlet?action=list");
     }
 
@@ -201,6 +202,7 @@ public class StudentServlet extends HttpServlet {
         checkAdminSession(request, response);
         int id = Integer.parseInt(request.getParameter("id"));
         studentDAO.deleteStudent(id);
+        LogUtil.logAction("Student Deleted (ID: " + id + ")");
         response.sendRedirect("StudentServlet?action=list");
     }
     

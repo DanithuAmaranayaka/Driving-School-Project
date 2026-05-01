@@ -1,22 +1,21 @@
 package models;
 
-public class Student {
+public class Student extends Person {
     private int studentId;
-    private String name;
     private String nic;
-    private String phoneNumber;
     private String address;
     private String licenseType;
     private String username;
     private String password;
 
-    public Student() {}
+    public Student() {
+        super();
+    }
 
     public Student(int studentId, String name, String nic, String phoneNumber, String address, String licenseType, String username, String password) {
+        super(name, phoneNumber);
         this.studentId = studentId;
-        this.name = name;
         this.nic = nic;
-        this.phoneNumber = phoneNumber;
         this.address = address;
         this.licenseType = licenseType;
         this.username = username;
@@ -27,14 +26,8 @@ public class Student {
     public int getStudentId() { return studentId; }
     public void setStudentId(int studentId) { this.studentId = studentId; }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
     public String getNic() { return nic; }
     public void setNic(String nic) { this.nic = nic; }
-
-    public String getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
@@ -47,4 +40,9 @@ public class Student {
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
+    @Override
+    public String getRole() {
+        return "Student";
+    }
 }

@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpSession;
 
 import dao.InstructorDAO;
 import models.Instructor;
+import util.LogUtil;
 
 @WebServlet("/InstructorServlet")
 public class InstructorServlet extends HttpServlet {
@@ -101,6 +102,7 @@ public class InstructorServlet extends HttpServlet {
         
         Instructor newInstructor = new Instructor(0, name, phoneNumber, vehicleType);
         instructorDAO.insertInstructor(newInstructor);
+        LogUtil.logAction("Instructor Added: " + name);
         response.sendRedirect("InstructorServlet?action=list");
     }
 
@@ -113,6 +115,7 @@ public class InstructorServlet extends HttpServlet {
 
         Instructor instructor = new Instructor(id, name, phoneNumber, vehicleType);
         instructorDAO.updateInstructor(instructor);
+        LogUtil.logAction("Instructor Updated: " + name + " (ID: " + id + ")");
         response.sendRedirect("InstructorServlet?action=list");
     }
 
@@ -120,6 +123,7 @@ public class InstructorServlet extends HttpServlet {
             throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         instructorDAO.deleteInstructor(id);
+        LogUtil.logAction("Instructor Deleted (ID: " + id + ")");
         response.sendRedirect("InstructorServlet?action=list");
     }
 }

@@ -127,6 +127,7 @@ public class PaymentServlet extends HttpServlet {
 
         Payment payment = new Payment(id, studentId, courseType, amount, paymentDate, paymentMethod);
         paymentDAO.updatePayment(payment);
+        LogUtil.logAction("Payment Updated (ID: " + id + ")");
         response.sendRedirect("PaymentServlet?action=list");
     }
 
@@ -134,6 +135,7 @@ public class PaymentServlet extends HttpServlet {
             throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         paymentDAO.deletePayment(id);
+        LogUtil.logAction("Payment Deleted (ID: " + id + ")");
         response.sendRedirect("PaymentServlet?action=list");
     }
 }
