@@ -89,7 +89,7 @@ public class InstructorServlet extends HttpServlet {
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Instructor existingInstructor = instructorDAO.selectInstructor(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("instructor_edit.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("instructor_add.jsp");
         request.setAttribute("instructor", existingInstructor);
         dispatcher.forward(request, response);
     }
