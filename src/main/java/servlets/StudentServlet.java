@@ -153,7 +153,7 @@ public class StudentServlet extends HttpServlet {
         checkAdminSession(request, response);
         int id = Integer.parseInt(request.getParameter("id"));
         Student existingStudent = studentDAO.selectStudent(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("student_edit.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("student_registration.jsp");
         request.setAttribute("student", existingStudent);
         dispatcher.forward(request, response);
     }

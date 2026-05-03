@@ -109,7 +109,7 @@ public class LessonServlet extends HttpServlet {
         request.setAttribute("students", studentDAO.selectAllStudents());
         request.setAttribute("instructors", instructorDAO.selectAllInstructors());
         request.setAttribute("vehicles", vehicleDAO.selectAllVehicles());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("lesson_edit.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("lesson_booking.jsp");
         dispatcher.forward(request, response);
     }
 

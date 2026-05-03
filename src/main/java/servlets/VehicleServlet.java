@@ -87,7 +87,7 @@ public class VehicleServlet extends HttpServlet {
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Vehicle existingVehicle = vehicleDAO.selectVehicle(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("vehicle_edit.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("vehicle_add.jsp");
         request.setAttribute("vehicle", existingVehicle);
         dispatcher.forward(request, response);
     }
