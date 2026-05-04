@@ -73,9 +73,9 @@
             </select>
           </div>
           <div>
-            <label class="form-label">Amount ($)</label>
+            <label class="form-label">Amount (LKR)</label>
             <div class="amount-wrap">
-              <span class="amount-prefix">$</span>
+              <span class="amount-prefix">LKR</span>
               <input type="number" step="0.01" min="0" name="amount" value="<c:out value='${payment.amount}'/>" placeholder="0.00" required>
             </div>
           </div>

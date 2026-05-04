@@ -113,9 +113,21 @@ public class StudentServlet extends HttpServlet {
             List<Payment> studentPayments = paymentDAO.selectPaymentsByStudent(student.getStudentId());
             List<Test> studentTests = testDAO.selectTestsByStudent(student.getStudentId());
             
+            // Calculate Stats
+            long totalLessons = studentLessons.size();
+            long completedLessons = studentLessons.stream().filter(l -> "Completed".equals(l.getStatus())).count();
+            long totalTests = studentTests.size();
+            long passTests = studentTests.stream().filter(t -> "Pass".equals(t.getResult())).count();
+            int score = (totalTests > 0) ? (int)((passTests * 100.0) / totalTests) : 0;
+            
             request.setAttribute("listLessons", studentLessons);
             request.setAttribute("listPayments", studentPayments);
             request.setAttribute("listTests", studentTests);
+            
+            request.setAttribute("totalLessons", totalLessons);
+            request.setAttribute("completedLessons", completedLessons);
+            request.setAttribute("totalTests", totalTests);
+            request.setAttribute("score", score);
             
             RequestDispatcher dispatcher = request.getRequestDispatcher("student_dashboard.jsp");
             dispatcher.forward(request, response);
