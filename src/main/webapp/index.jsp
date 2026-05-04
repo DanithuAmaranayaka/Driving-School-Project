@@ -1042,7 +1042,7 @@
                 </div>
             </div>
             <div class="car-card">
-                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80" alt="Car"
+                <img src="images/A_young_confident_student_learning_202605042153.jpeg" alt="Driving Lesson"
                     class="car-img">
                 <div class="car-pill">
                     <div class="pill-dot"></div>
@@ -1124,7 +1124,7 @@
                 <div class="course-header">
                     <span class="course-badge badge-basic">Starter</span>
                     <div class="course-name">Basic Course</div>
-                    <div class="course-price">$299<span>/package</span></div>
+                    <div class="course-price">LKR 15,000<span>/package</span></div>
                 </div>
                 <div class="course-body">
                     <div class="course-feature">10 driving lessons (1hr each)</div>
@@ -1138,7 +1138,7 @@
                 <div class="course-header">
                     <span class="course-badge badge-popular">Most Popular</span>
                     <div class="course-name">Standard Course</div>
-                    <div class="course-price">$499<span>/package</span></div>
+                    <div class="course-price">LKR 35,000<span>/package</span></div>
                 </div>
                 <div class="course-body">
                     <div class="course-feature">20 driving lessons (1hr each)</div>
@@ -1153,7 +1153,7 @@
                 <div class="course-header">
                     <span class="course-badge badge-pro">Pro</span>
                     <div class="course-name">Intensive Course</div>
-                    <div class="course-price">$799<span>/package</span></div>
+                    <div class="course-price">LKR 55,000<span>/package</span></div>
                 </div>
                 <div class="course-body">
                     <div class="course-feature">Unlimited lessons for 6 weeks</div>

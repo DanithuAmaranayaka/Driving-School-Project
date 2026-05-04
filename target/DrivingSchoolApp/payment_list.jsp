@@ -77,7 +77,7 @@
               <td><span class="id-pill"><c:out value="${payment.paymentId}"/></span></td>
               <td><span class="id-pill"><c:out value="${payment.studentId}"/></span></td>
               <td class="bold"><c:out value="${payment.courseType}"/></td>
-              <td><span class="amount-gold">$<c:out value="${payment.amount}"/></span></td>
+              <td><span class="amount-gold">LKR <c:out value="${payment.amount}"/></span></td>
               <td><c:out value="${payment.paymentDate}"/></td>
               <td><c:out value="${payment.paymentMethod}"/></td>
               <td><div class="action-btns">

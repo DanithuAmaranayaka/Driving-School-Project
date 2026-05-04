@@ -35,7 +35,7 @@ public class LessonDAO {
 
     public Lesson selectLesson(int lessonId) {
         Lesson lesson = null;
-        String query = "SELECT * FROM lessons WHERE lesson_id = ?";
+        String query = "SELECT l.*, i.name as instructor_name FROM lessons l LEFT JOIN instructors i ON l.instructor_id = i.instructor_id WHERE l.lesson_id = ?";
         
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -48,6 +48,7 @@ public class LessonDAO {
                     rs.getInt("lesson_id"),
                     rs.getInt("student_id"),
                     rs.getInt("instructor_id"),
+                    rs.getString("instructor_name"),
                     rs.getInt("vehicle_id"),
                     rs.getDate("lesson_date"),
                     rs.getTime("lesson_time"),
@@ -62,7 +63,7 @@ public class LessonDAO {
 
     public List<Lesson> selectAllLessons() {
         List<Lesson> lessons = new ArrayList<>();
-        String query = "SELECT * FROM lessons";
+        String query = "SELECT l.*, i.name as instructor_name FROM lessons l LEFT JOIN instructors i ON l.instructor_id = i.instructor_id";
         
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -73,6 +74,7 @@ public class LessonDAO {
                     rs.getInt("lesson_id"),
                     rs.getInt("student_id"),
                     rs.getInt("instructor_id"),
+                    rs.getString("instructor_name"),
                     rs.getInt("vehicle_id"),
                     rs.getDate("lesson_date"),
                     rs.getTime("lesson_time"),
@@ -124,7 +126,7 @@ public class LessonDAO {
 
     public List<Lesson> selectLessonsByStudent(int studentId) {
         List<Lesson> lessons = new ArrayList<>();
-        String query = "SELECT * FROM lessons WHERE student_id = ?";
+        String query = "SELECT l.*, i.name as instructor_name FROM lessons l LEFT JOIN instructors i ON l.instructor_id = i.instructor_id WHERE l.student_id = ?";
         
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -137,6 +139,7 @@ public class LessonDAO {
                     rs.getInt("lesson_id"),
                     rs.getInt("student_id"),
                     rs.getInt("instructor_id"),
+                    rs.getString("instructor_name"),
                     rs.getInt("vehicle_id"),
                     rs.getDate("lesson_date"),
                     rs.getTime("lesson_time"),

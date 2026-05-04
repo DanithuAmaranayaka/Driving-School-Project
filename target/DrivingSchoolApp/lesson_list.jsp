@@ -80,7 +80,7 @@
             <tr>
               <td><span class="id-pill"><c:out value="${lesson.lessonId}"/></span></td>
               <td><span class="id-pill"><c:out value="${lesson.studentId}"/></span></td>
-              <td><span class="id-pill"><c:out value="${lesson.instructorId}"/></span></td>
+              <td><c:out value="${lesson.instructorName}"/></td>
               <td><span class="id-pill"><c:out value="${lesson.vehicleId}"/></span></td>
               <td class="bold"><c:out value="${lesson.lessonDate}"/></td>
               <td><c:out value="${lesson.lessonTime}"/></td>

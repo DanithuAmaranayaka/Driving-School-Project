@@ -7,6 +7,7 @@ public class Lesson {
     private int lessonId;
     private int studentId;
     private int instructorId;
+    private String instructorName;
     private int vehicleId;
     private Date lessonDate;
     private Time lessonTime;
@@ -24,6 +25,17 @@ public class Lesson {
         this.status = status;
     }
 
+    public Lesson(int lessonId, int studentId, int instructorId, String instructorName, int vehicleId, Date lessonDate, Time lessonTime, String status) {
+        this.lessonId = lessonId;
+        this.studentId = studentId;
+        this.instructorId = instructorId;
+        this.instructorName = instructorName;
+        this.vehicleId = vehicleId;
+        this.lessonDate = lessonDate;
+        this.lessonTime = lessonTime;
+        this.status = status;
+    }
+
     // Getters and Setters
     public int getLessonId() { return lessonId; }
     public void setLessonId(int lessonId) { this.lessonId = lessonId; }
@@ -33,6 +45,9 @@ public class Lesson {
 
     public int getInstructorId() { return instructorId; }
     public void setInstructorId(int instructorId) { this.instructorId = instructorId; }
+
+    public String getInstructorName() { return instructorName; }
+    public void setInstructorName(String instructorName) { this.instructorName = instructorName; }
 
     public int getVehicleId() { return vehicleId; }
     public void setVehicleId(int vehicleId) { this.vehicleId = vehicleId; }

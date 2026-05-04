@@ -417,19 +417,19 @@
     <!-- STATS -->
     <div class="stat-grid">
       <div class="stat-card">
-        <div class="stat-num">12</div>
+        <div class="stat-num">${totalLessons}</div>
         <div class="stat-label">Lessons</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">8</div>
+        <div class="stat-num">${completedLessons}</div>
         <div class="stat-label">Done</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">2</div>
+        <div class="stat-num">${totalTests}</div>
         <div class="stat-label">Tests</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">94%</div>
+        <div class="stat-num">${score}%</div>
         <div class="stat-label">Score</div>
       </div>
     </div>
@@ -474,6 +474,7 @@
             <tr>
               <th>Date</th>
               <th>Time</th>
+              <th>Instructor</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -482,6 +483,7 @@
               <tr>
                 <td><c:out value="${lesson.lessonDate}" /></td>
                 <td><c:out value="${lesson.lessonTime}" /></td>
+                <td><c:out value="${lesson.instructorName}" /></td>
                 <td>
                   <span class="badge badge-${lesson.status == 'Scheduled' ? 'scheduled' : (lesson.status == 'Completed' ? 'completed' : 'cancelled')}">
                     <span class="badge-dot"></span>
@@ -492,7 +494,7 @@
             </c:forEach>
             <c:if test="${empty listLessons}">
               <tr>
-                <td colspan="3">
+                <td colspan="4">
                   <div class="empty-state">
                     <div class="empty-icon">📋</div>
                     <div class="empty-text">No lessons scheduled yet.</div>
