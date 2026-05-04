@@ -1042,7 +1042,7 @@
                 </div>
             </div>
             <div class="car-card">
-                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80" alt="Car"
+                <img src="images/A_young_confident_student_learning_202605042153.jpeg" alt="Driving Lesson"
                     class="car-img">
                 <div class="car-pill">
                     <div class="pill-dot"></div>
